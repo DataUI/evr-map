@@ -200,7 +200,7 @@
     loadVehicles () { // Get vehicle data
       let vehicles = ''
       let year = $('#sel-year').val()
-      let jsonURL = '/js/data/ev-range-' + year + '.json'
+      let jsonURL = '/evr-map/js/data/ev-range-' + year + '.json'
 
       // Get vehicle JSON data
       $.getJSON(jsonURL, (vehicleData) => {
