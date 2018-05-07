@@ -99,7 +99,7 @@
       // Add station data geojson source
       map.addSource('ev-stations', {
         type: 'geojson',
-        data: 'evr-map/js/data/ev-stations-2018.geojson',
+        data: '/evr-map/js/data/ev-stations-2018.geojson',
         buffer: 0,
         maxzoom: 12,
         cluster: true,
