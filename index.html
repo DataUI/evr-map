@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta name="robots" content="noindex, nofollow">
+<meta charset="utf-8">
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+<title>EVR Range Estimator</title>
+<meta name="description" content="">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="manifest" href="site.webmanifest">
+<link href="https://fonts.googleapis.com/css?family=Montserrat|Open+Sans" rel="stylesheet">
+<link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.42.1/mapbox-gl.css' rel='stylesheet' />
+<link rel='stylesheet' href='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v2.1.1/mapbox-gl-geocoder.css' type='text/css' />
+<link rel="stylesheet" href="css/bootstrap.min.css">
+<link rel="stylesheet" href="css/theme.css">
+<link rel="stylesheet" href="css/map.css">
+</head>
+
+<body>
+  <!--[if lte IE 9]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
+        <![endif]-->
+  <header>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-sm-12 col-md-5">
+          <h1>
+            EV Range Estimator
+          <small>Find electric vehicle charging stations within distance</small>
+        </h1>
+
+        </div>
+        <div class="form-search col-sm-12 col-md-7">
+          <div class="search-container">
+            <div class="col-field">
+              <label for="">Location</label>
+              <div id="geocoder" class="geocoder"></div>
+              <!-- <button id="btn-find" class="btn btn-success" type="button">Find Stations</button> -->
+            </div>
+            <div class="col-field">
+              <div class="range-search">
+                <span class="control-label">Enter distance or <a href="#void" data-target="vehicle-search" data-searchtype="vehicle">select vehicle</a></span>
+                <input id="circle-radius" class="form-control form" type="text" size="3" maxlength="3">
+                <span class="help-text">miles</span>
+              </div>
+              <div class="vehicle-search hide">
+                <span class="control-label">Select vehicle or <a href="#void" data-target="range-search" data-searchtype="range">enter distance</a></span>
+                <select name="" id="sel-year" class="form-control form-control-inline"></select>
+                <select name="" id="sel-vehicle" class="form-control form-control-inline"></select>
+              </div>
+              <button id="btn-find" class="btn btn-success" type="button">Find Stations</button>
+            </div>            
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  <main>
+    <div class="map-container">
+      <div class="map-about">
+        <a href="#void" data-toggle="modal" data-target="#modal-about">About</a>
+      </div>
+      <div class="mapctrl-viewNW">
+        <div class="mapboxgl-ctrl mapboxgl-ctrl-group">
+        <button id="btn-viewNW" class="btn btn-default btn-sm"><span class="glyphicon glyphicon-home"></span></button>
+        </div>   
+      </div>
+      <div class="layer-switch mapboxgl-ctrl mapboxgl-ctrl-group">
+        <div class="radio">
+          <label>
+            <input type="radio" value="dark" name="layerSwitch" checked> Dark
+          </label>
+        </div>
+        <div class="radio">
+          <label>
+            <input type="radio" value="light" name="layerSwitch"> Light
+          </label>
+        </div>        
+        <div class="radio">
+          <label>
+            <input type="radio" value="streets" name="layerSwitch"> Streets
+          </label>
+        </div>
+      </div>
+      <div class="panel-meta">
+        <div class="vehicle-meta hide">
+          <dl>
+            <dt>Vehicle</dt>
+            <dd class="h3" data-vehicle></dd>
+            <dt>Range</dt>
+            <dd data-range></dd>
+            <dt>Estimated time to charge battery</dt>
+            <dd data-chargeTime></dd>
+          </dl>
+          <span class="help-text">using a Level 2 - 240V charger</span>
+        </div>
+        <div class="station-meta hide">
+          <dl>
+            <dt>Station</dt>
+            <dd class="h3" data-station></dd>
+            <dt class="hide">Address</dt>
+            <dd data-addr></dd>
+            <dt># Level 1 Outlets</dt>
+            <dd data-level1></dd>
+            <dt># Level 2 Outlets</dt>
+            <dd data-level2></dd>
+            <dt># DC Fast Charge Outlets</dt>
+            <dd data-fastCharge></dd>
+            <dt>Available Connectors</dt>
+            <dd data-connectorTypes></dd>
+            <dt>Access</dt>
+            <dd data-accessType></dd>
+          </dl>
+        </div>
+      </div>
+      <div id="map"></div>
+    </div>
+    <div id="modal-about" class="modal fade" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title">About</h4>
+      </div>
+      <div class="modal-body">
+        <p>The purpose of the application is to visualize electric vehicle charging stations (both public and private) that are currently available across the U.S. and to find stations within a given distance. This application applies only to battery electric vehicles and does not include data for hybrids or gas powered vehicles.</p>
+
+        <p><b>Data Sources</b></p>
+        <p>Office of Energy Efficiency &amp; Renewable Energy<br><a href="https://www.energy.gov/eere/electricvehicles/find-electric-vehicle-models" target="_blank">Find Electric Vehicle Models</a></p>
+        <p>U.S. Department of Energy, Alternative Fuels Data Center<br><a href="https://www.afdc.energy.gov/data_download/" target="_blank">Data Downloads</a></p>
+      </div>
+      <div class="modal-footer">
+        <div class="row">
+          <div class="col-sm-6">
+            <p class="app-attr text-left">A GEOG 575 Project</p>
+          </div>
+          <div class="col-sm-6">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+        
+        
+      </div>
+    </div>
+  </div>
+</div>
+  </main>
+  
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script>
+  window.jQuery || document.write('<script src="js/vendor/jquery-3.2.1.min.js"><\/script>')
+  </script>
+  
+  <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.42.1/mapbox-gl.js'></script>
+  <script src='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v2.1.1/mapbox-gl-geocoder.min.js'></script>
+  <script src='https://npmcdn.com/mapbox-gl-circle/dist/mapbox-gl-circle.min.js'></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+  
+  <script type="text/javascript" src="js/app.js"></script>
+  <script>
+    // Add custom class to mapbox geocoder control
+  $('.mapboxgl-ctrl-geocoder').find('input').addClass('form-control')
+  </script>
+</body>
+
+</html>

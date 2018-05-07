@@ -1,0 +1,142 @@
+/* Base styles */
+
+body {
+  background-color: #333;
+  font-family: 'Open Sans', sans-serif;
+  min-height: 100vh;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: 'Montserrat', sans-serif;
+}
+
+h1 small {
+  color: #fff;
+  display: block;
+  font-size: 14px;
+  margin: 10px 0 20px 3px;
+}
+
+option {
+  font-weight: normal;
+}
+
+
+/* Layout */
+
+header {
+  background-color: #225ea8;
+  color: #fff;    
+  padding-right: 15px;
+}
+
+main {
+  position: relative;
+}
+
+footer {
+  background-color: #000;
+  color: #ccc;
+  font-size: 12px;
+  padding: 25px 0;
+  text-align: center;
+}
+
+/* Search form */
+
+.search-container {
+  float: none;
+  padding-bottom: 15px;
+}
+
+@media (min-width: 1024px) {
+  .search-container {
+    float: right;
+  }
+}
+
+.form-search .col-field {
+  float: left;
+  margin: 20px 10px 15px 0;
+}
+
+@media (min-width: 1024px) {
+  .form-search .col-field {
+    margin-bottom: 0;
+  }
+}
+
+.form-search .btn {
+  display: inline-block;
+  margin: 5px 0 0 0;
+  vertical-align: middle;
+}
+
+.range-search.hide ~ .btn-success {
+  margin-left: 10px;
+  vertical-align: bottom;
+}
+
+.form-control-inline {
+  display: inline-block;
+}
+
+.range-search, .vehicle-search {
+  display: inline-block;
+}
+
+.range-search .form-control, .vehicle-search .form-control {
+  width: auto;
+}
+
+.range-search {
+  vertical-align: middle;
+  white-space: nowrap;
+  width: 70px;
+}
+
+.range-search select, .vehicle-search select {
+  padding-right: 0;
+}
+
+.control-label {
+  display: block;
+  font-weight: normal;
+  margin-bottom: 5px
+}
+
+.control-label a {
+  color: #44cdec;
+  font-weight: 700;
+}
+
+#sel-vehicle {
+  width: 150px;
+}
+
+.input-search, .input-radius {
+  padding-top: 20px;
+}
+
+.input-radius .form-control {
+  height: 40px;
+  padding: 10px;
+}
+
+.help-text {
+  font-size: 12px;
+  font-style: italic;
+}
+
+.help-inline {
+  display: inline-block;
+}
+
+.app-attr {
+  font-size: 12px;
+  font-style: italic;
+  margin-top: 7px;
+}
