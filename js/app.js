@@ -99,7 +99,7 @@
       // Add station data geojson source
       map.addSource('ev-stations', {
         type: 'geojson',
-        data: '/js/data/ev-stations-2018.geojson',
+        data: 'evr-map/js/data/ev-stations-2018.geojson',
         buffer: 0,
         maxzoom: 12,
         cluster: true,
@@ -200,7 +200,7 @@
     loadVehicles () { // Get vehicle data
       let vehicles = ''
       let year = $('#sel-year').val()
-      let jsonURL = '/js/data/ev-range-' + year + '.json'
+      let jsonURL = 'evr-map/js/data/ev-range-' + year + '.json'
 
       // Get vehicle JSON data
       $.getJSON(jsonURL, (vehicleData) => {
