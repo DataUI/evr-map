@@ -1,0 +1,170 @@
+[
+ {
+   "Model": "i3 (94Ah)",
+   "Make": "BMW",
+   "Class": "Subcompact Cars",
+   "Year": 2018,
+   "Range": "114",
+   "time_to_charge": 5
+ },
+ {
+   "Model": "i3s (94Ah)",
+   "Make": "BMW",
+   "Class": "Subcompact Cars",
+   "Year": 2018,
+   "Range": "107",
+   "time_to_charge": 5
+ },
+ {
+   "Model": "e6",
+   "Make": "BYD",
+   "Class": "Small Sport Utility Vehicle 2WD",
+   "Year": 2018,
+   "Range": "187",
+   "time_to_charge": 5
+ },
+ {
+   "Model": "Bolt EV",
+   "Make": "Chevrolet",
+   "Class": "Small Station Wagons",
+   "Year": 2018,
+   "Range": "238",
+   "time_to_charge": 9.3
+ },
+ {
+   "Model": "500e",
+   "Make": "Fiat",
+   "Class": "Minicompact Cars",
+   "Year": 2018,
+   "Range": "84",
+   "time_to_charge": 4
+ },
+ {
+   "Model": "Focus Electric",
+   "Make": "Ford",
+   "Class": "Compact Cars",
+   "Year": 2018,
+   "Range": "115",
+   "time_to_charge": 5.5
+ },
+ {
+   "Model": "Clarity EV",
+   "Make": "Honda",
+   "Class": "Midsize Cars",
+   "Year": 2018,
+   "Range": "89",
+   "time_to_charge": 4
+ },
+ {
+   "Model": "Ioniq Electric",
+   "Make": "Hyundai",
+   "Class": "Midsize Cars",
+   "Year": 2018,
+   "Range": "124",
+   "time_to_charge": 4
+ },
+ {
+   "Model": "Soul Electric",
+   "Make": "Kia",
+   "Class": "Small Station Wagons",
+   "Year": 2018,
+   "Range": "111",
+   "time_to_charge": 5
+ },
+ {
+   "Model": "Leaf",
+   "Make": "Nissan",
+   "Class": "Midsize Cars",
+   "Year": 2018,
+   "Range": "151",
+   "time_to_charge": 8
+ },
+ {
+   "Model": "fortwo electric drive convertible",
+   "Make": "smart",
+   "Class": "Two Seaters",
+   "Year": 2018,
+   "Range": "57",
+   "time_to_charge": 3
+ },
+ {
+   "Model": "fortwo electric drive coupe",
+   "Make": "smart",
+   "Class": "Two Seaters",
+   "Year": 2018,
+   "Range": "58",
+   "time_to_charge": 3
+ },
+ {
+   "Model": "Model 3 Long Range",
+   "Make": "Tesla",
+   "Class": "Midsize Cars",
+   "Year": 2018,
+   "Range": "310",
+   "time_to_charge": 10
+ },
+ {
+   "Model": "Model S 100D",
+   "Make": "Tesla",
+   "Class": "Large Cars",
+   "Year": 2018,
+   "Range": "335",
+   "time_to_charge": 12
+ },
+ {
+   "Model": "Model S 75D",
+   "Make": "Tesla",
+   "Class": "Large Cars",
+   "Year": 2018,
+   "Range": "259",
+   "time_to_charge": 12
+ },
+ {
+   "Model": "Model S 75kWh",
+   "Make": "Tesla",
+   "Class": "Large Cars",
+   "Year": 2018,
+   "Range": "249",
+   "time_to_charge": 10
+ },
+ {
+   "Model": "Model S P100D",
+   "Make": "Tesla",
+   "Class": "Large Cars",
+   "Year": 2018,
+   "Range": "315",
+   "time_to_charge": 12
+ },
+ {
+   "Model": "Model X 100D",
+   "Make": "Tesla",
+   "Class": "Standard Sport Utility Vehicle 4WD",
+   "Year": 2018,
+   "Range": "295",
+   "time_to_charge": 12
+ },
+ {
+   "Model": "Model X 75D",
+   "Make": "Tesla",
+   "Class": "Standard Sport Utility Vehicle 4WD",
+   "Year": 2018,
+   "Range": "238",
+   "time_to_charge": 12
+ },
+ {
+   "Model": "Model X P100D",
+   "Make": "Tesla",
+   "Class": "Standard Sport Utility Vehicle 4WD",
+   "Year": 2018,
+   "Range": "289",
+   "time_to_charge": 12
+ },
+ {
+   "Model": "e-Golf",
+   "Make": "Volkswagen",
+   "Class": "Compact Cars",
+   "Year": 2018,
+   "Range": "125",
+   "time_to_charge": 5.3
+ }
+]
